@@ -1,0 +1,121 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart Campus Lost & Found</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <header>
+        <div class="logo">Smart Campus</div>
+
+        <nav>
+            <a href="#home">Home</a>
+            <a href="#report-lost">Report Lost</a>
+            <a href="#report-found">Report Found</a>
+            <a href="#items">View Items</a>
+        </nav>
+    </header>
+
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <h1>Lost Something on Campus?</h1>
+
+            <p>
+                Don't worry! Our Smart Campus Lost and Found
+                system helps students find their belongings.
+            </p>
+
+            <a href="#report-lost" class="btn">
+                Report Lost Item
+            </a>
+
+            <a href="#items" class="btn secondary">
+                Browse Items
+            </a>
+        </div>
+    </section>
+
+    <section class="features">
+        <h2>What Would You Like To Do?</h2>
+
+        <div class="card-container">
+
+            <div class="card" id="report-lost">
+                <h3>Report Lost Item</h3>
+                <p>Report an item that you have lost on campus.</p>
+                <button onclick="showForm('lost')">
+                    Report Lost
+                </button>
+            </div>
+
+            <div class="card" id="report-found">
+                <h3>Report Found Item</h3>
+                <p>Help someone by reporting an item you found.</p>
+                <button onclick="showForm('found')">
+                    Report Found
+                </button>
+            </div>
+
+            <div class="card" id="items">
+                <h3>View All Items</h3>
+                <p>Browse the list of lost and found belongings.</p>
+                <button onclick="loadItems()">
+                    View Items
+                </button>
+            </div>
+
+        </div>
+    </section>
+
+    <section class="form-section" id="item-form-section">
+        <h2 id="form-title">Report Item</h2>
+
+        <form id="itemForm">
+
+            <input type="hidden" id="status">
+
+            <input type="number" id="itemId"
+                   placeholder="Item ID" required>
+
+            <input type="text" id="itemName"
+                   placeholder="Item Name" required>
+
+            <textarea id="description"
+                      placeholder="Item Description"
+                      required></textarea>
+
+            <input type="text" id="location"
+                   placeholder="Location" required>
+
+            <input type="date" id="date" required>
+
+            <button type="submit">Submit Item</button>
+
+        </form>
+    </section>
+
+    <section class="items-section">
+        <h2>Campus Items</h2>
+
+        <input type="text" id="searchInput"
+               placeholder="Search items...">
+
+        <button onclick="searchItems()">Search</button>
+
+        <div id="itemList"></div>
+    </section>
+
+    <footer>
+        <p>© 2026 Smart Campus Lost and Found System</p>
+        <p>Helping students find their belongings.</p>
+    </footer>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
